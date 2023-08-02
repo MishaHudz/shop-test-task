@@ -5,8 +5,8 @@ function Layout() {
   return (
     <>
       <Header>
-        <NavLink to="/"> Home Page</NavLink>
-        <NavLink to="/page"> Page</NavLink>
+        <NavLink to="/">Home Page</NavLink>
+        <NavLink to="/shopping_cart"> Shoping cart</NavLink>
       </Header>
 
       <Main>
