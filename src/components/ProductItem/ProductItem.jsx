@@ -1,4 +1,4 @@
-import { TweetsList } from './ProductItem.styled';
+import { HomePageProductItem } from './ProductItem.styled';
 
 function ProductItem({ product }) {
   const { productName, price, ProductDescription, ProductPhoto, id } = product;
@@ -22,7 +22,7 @@ function ProductItem({ product }) {
   };
 
   return (
-    <TweetsList>
+    <HomePageProductItem>
       <img src={ProductPhoto} alt={ProductDescription} width="360px" />
       <h2>{productName}</h2>
       <p>
@@ -31,7 +31,7 @@ function ProductItem({ product }) {
       <button type="button" onClick={onAddButtonClick}>
         Add to shopping cart
       </button>
-    </TweetsList>
+    </HomePageProductItem>
   );
 }
 

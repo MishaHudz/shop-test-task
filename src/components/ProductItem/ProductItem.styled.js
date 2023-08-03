@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TweetsList = styled.li`
+export const HomePageProductItem = styled.li`
   width: 360px;
 
   border: 1px solid black;
