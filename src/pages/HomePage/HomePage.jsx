@@ -1,6 +1,6 @@
 import ProductItem from 'components/ProductItem/ProductItem';
 
-function HomePage({ products, setPage }) {
+function HomePage({ products, setPage, isLoadMore }) {
   const OnLofdMoreBtnClick = () => {
     setPage(prev => prev + 1);
   };
@@ -13,9 +13,11 @@ function HomePage({ products, setPage }) {
           <ProductItem key={product.id} product={product} />
         ))}
       </ul>
-      <button type="button" onClick={OnLofdMoreBtnClick}>
-        Load More
-      </button>
+      {isLoadMore && (
+        <button type="button" onClick={OnLofdMoreBtnClick}>
+          Load More
+        </button>
+      )}
     </section>
   );
 }

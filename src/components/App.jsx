@@ -9,11 +9,13 @@ import { getAllProducts } from 'services/shopAPI';
 export const App = () => {
   const [page, setPage] = useState(1);
   const [products, setProducts] = useState([]);
+  const [isLoadMore, setIsLoadMore] = useState(true);
 
   useEffect(() => {
     (async () => {
       const data = await getAllProducts(page);
       setProducts(prev => [...prev, ...data]);
+      data.length < 3 && setIsLoadMore(false);
     })();
   }, [page]);
 
@@ -22,7 +24,13 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route
           index
-          element={<HomePage products={products} setPage={setPage} />}
+          element={
+            <HomePage
+              products={products}
+              setPage={setPage}
+              isLoadMore={isLoadMore}
+            />
+          }
         />
         <Route
           path="/shopping_cart"
