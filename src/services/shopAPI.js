@@ -11,3 +11,8 @@ export async function getAllProducts(page = 1) {
   const { data } = await axios('/products', { params });
   return data;
 }
+
+export async function getProductById(id) {
+  const { data } = await axios(`/products/${id}`);
+  return data;
+}
